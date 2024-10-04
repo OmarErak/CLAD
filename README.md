@@ -1,2 +1,2 @@
 # CLAD
-Contrastive Learning Adversarial Disentanglement for Task Oriented Communications
+Contrastive Learning and Adversarial Disentanglement for Task Oriented Communications
