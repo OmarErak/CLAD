@@ -1,0 +1,13 @@
+numpy==1.19.3
+scipy==1.5.4
+tensorboard==2.3.0
+Pillow==8.0.1
+
+# PyTorch dependencies
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.7.0
+torchvision==0.8.1
+scikit-learn
+pandas
+matplotlib
+jupyter
