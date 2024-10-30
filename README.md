@@ -2,6 +2,45 @@
 
 This repository contains code and utilities for Contrastive Learning and Adversarial Disentanglement for Task Oriented Communications. TODO: Add paper link
 
+## Requirements
+
+To run the code in this repository, you need the following:
+
+- Python 3.8 or higher
+- Jupyter Notebook
+- Required Python packages (listed in `requirements.txt`)
+
+## Installation
+
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/OmarErak/CLAD.git
+    cd CLAD
+    ```
+
+2. **Create a virtual environment:**
+    ```sh
+    python3 -m venv env
+    source env/bin/activate  # On Windows, use `env\Scripts\activate`
+    ```
+
+3. **Install the required packages:**
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+1. **Open the Jupyter Notebook:**
+    ```sh
+    jupyter notebook
+    ```
+
+2. **Navigate to the `CLAD_Colored_FashionMNIST\Final_Contrastive_V2.ipynb` notebook and open it.**
+
+3. **Run the notebook cells:**
+
+
 ## File Structure
 
 - **auto_augment.py**: Implements data augmentation techniques used to expand the training dataset and improve model robustness.
@@ -11,16 +50,16 @@ This repository contains code and utilities for Contrastive Learning and Adversa
 - **spc.py**: Implements supervised contrastive loss.
 - **Final_Contrastive_V2.ipynb**: Jupyter Notebook for training and testing CLAD.
 
-## Setup
+## TODO
+- Add CIFAR10 and ColoredMNIST folders
+- Modular code instead of notebooks
+- Add baseline implementations
 
-### Prerequisites
+## License
 
-- Python 3.10 or above
-- Jupyter Notebook
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your_username/contrastive_learning_project.git
-pip install -r requirements.txt
+## Citation
+If you find the paper or codebase useful, please cite our paper: 
+TODO
