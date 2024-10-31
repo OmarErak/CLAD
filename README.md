@@ -1,7 +1,6 @@
 # CLAD
 
-This repository contains code and utilities for Contrastive Learning and Adversarial Disentanglement for Task Oriented Communications. TODO: Add paper link
-
+This repository contains code and utilities for Contrastive Learning and Adversarial Disentanglement for Task Oriented Communications - https://arxiv.org/abs/2410.22784
 ## Requirements
 
 To run the code in this repository, you need the following:
@@ -62,4 +61,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Citation
 If you find the paper or codebase useful, please cite our paper: 
-TODO
+~~~
+@misc{erak2024contrastivelearningadversarialdisentanglement,
+      title={Contrastive Learning and Adversarial Disentanglement for Privacy-Preserving Task-Oriented Semantic Communications}, 
+      author={Omar Erak and Omar Alhussein and Wen Tong},
+      year={2024},
+      eprint={2410.22784},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2410.22784}, 
+}
+~~~
