@@ -1,6 +1,8 @@
 # CLAD
 
 This repository contains code and utilities for Contrastive Learning and Adversarial Disentanglement for Task Oriented Communications - https://arxiv.org/abs/2410.22784
+
+Please note, the repo will be updated for improved functionality, usage, and documentation by 25th December, 2024. Thank you for your patience. 
 ## Requirements
 
 To run the code in this repository, you need the following:
