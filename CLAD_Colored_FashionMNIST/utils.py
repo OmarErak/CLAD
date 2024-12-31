@@ -5,7 +5,9 @@
 import shutil
 import sys
 import time
-
+import numpy as np
+import math
+import torch
 
 _, term_width = shutil.get_terminal_size()
 term_width = int(term_width)
@@ -90,3 +92,55 @@ def format_time(seconds):
     if f == '':
         f = '0ms'
     return f
+
+def add_awgn_noise(z, snr_db):
+    # Calculate the signal power
+    signal_power = torch.mean(torch.abs(z**2))
+    
+    # Calculate noise power based on the SNR
+    sigma2 = signal_power * 10**(-snr_db/10)
+    
+    # Generate real noise using torch.randn
+    noise = torch.sqrt(sigma2) * torch.randn(z.size(), dtype=z.dtype, device=z.device)
+    
+    # Return the signal plus the noise (real-valued)
+    return z + noise
+
+
+def adjust_learning_rate(optimizer, epoch, mode, args):
+    if mode == "contrastive":
+        lr = args.lr_contrastive
+        n_epochs = args.n_epochs_contrastive
+    elif mode == "cross_entropy":
+        lr = args.lr_cross_entropy
+        n_epochs = args.n_epochs_cross_entropy
+    else:
+        raise ValueError("Unknown mode for learning rate adjustment.")
+
+    if args.cosine:
+        eta_min = lr * (args.lr_decay_rate ** 3)
+        lr = eta_min + (lr - eta_min) * (1 + math.cos(math.pi * epoch / n_epochs)) / 2
+    else:
+        steps = np.sum(epoch > np.array(args.lr_decay_epochs))
+        if steps > 0:
+            lr = lr * (args.lr_decay_rate ** steps)
+
+    for param_group in optimizer.param_groups:
+        param_group["lr"] = lr
+
+def save_model(model, path):
+    torch.save({'model_state_dict': model.state_dict()}, path)
+    print(f"Model saved at {path}")
+
+def load_phase1_model(encoder_path, encoder_class, args):
+
+    # Initialize models
+    encoder = encoder_class(3, args.latent_dim).to(args.device)
+
+    # Load the encoder state dictionary
+    checkpoint_encoder = torch.load(encoder_path, map_location=args.device)
+    encoder.load_state_dict(checkpoint_encoder["model_state_dict"])
+
+    print(f"Encoder loaded from {encoder_path}")
+    
+    return encoder
