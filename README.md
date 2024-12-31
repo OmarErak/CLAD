@@ -2,7 +2,7 @@
 
 This repository contains code and utilities for Contrastive Learning and Adversarial Disentanglement for Task Oriented  Semantic Communications - https://arxiv.org/abs/2410.22784
 
-Please note, the repo will be updated for improved functionality, usage, and documentation by 25th December, 2024. Thank you for your patience. 
+Please note, the repo will be updated for improved functionality, usage, and documentation. Thank you for your patience. 
 ## Requirements
 
 To run the code in this repository, you need the following:
@@ -30,7 +30,7 @@ To run the code in this repository, you need the following:
     pip install -r requirements.txt
     ```
 
-## Usage
+## Usage (Jupyter Notebook)
 
 1. **Open the Jupyter Notebook:**
     ```sh
@@ -40,6 +40,17 @@ To run the code in this repository, you need the following:
 2. **Navigate to the `CLAD_Colored_FashionMNIST\Final_Contrastive_V2.ipynb` notebook and open it.**
 
 3. **Run the notebook cells:**
+
+
+## Usage 
+
+1. Navigate to CLAD_Colored_FashionMNIST
+2. Run the following:
+    ```sh
+    python main.py --phase=1 --dataset=coloredfmnist
+    python main.py --phase=2 --dataset=coloredfmnist
+    python main.py --phase=3 --dataset=coloredfmnist
+    ```
 
 
 ## File Structure
